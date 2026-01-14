@@ -3,37 +3,41 @@ import { FiGithub, FiExternalLink, FiLayers, FiTerminal } from "react-icons/fi";
 
 // Asset Imports
 import euthereumApp from "../assets/euthereum-app.png";
-import socialmedia from "../assets/socialmedia.png";
 import Nocturne from "../assets/nocturn.png"; // Used for DealZone based on your data
-
+import emailn8n from "../assets/workflow.png";
 const WorkSection = () => {
   // Hardcoded selection from your provided data
   const projects = [
 
-    
+
     {
       title: "Nocturne",
       description: "A modern web platform for buying and selling homes. Features include property listings, search filters, user authentication, and real-time management.",
       tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
       image: Nocturne,
-      github: "https://github.com/louals/DealZone",
-      live: "https://jkdealzone.com/"
+      github: "https://github.com/louals/stocks-app",
+      live: "https://nocturn-kappa.vercel.app/"
     },
     {
-      title: "Social Media App",
-      description: "A TypeScript React social app using Appwrite with infinite scroll, post creation, likes, saves, and user profiles. Clean, scalable, modern.",
-      tags: ["TypeScript", "React", "AppWrite", "Tailwind CSS"],
-      image: socialmedia,
-      github: "https://github.com/louals/React_SocialMedia",
-      live: "https://save-and-share.onrender.com"
+      id: "email-n8n",
+      title: "Email Workflow Automation",
+      description: "Automation pipeline for email processing using N8N visual workflows.",
+      tags: ["N8N", "APIs", "Workflow"],
+      categories: ["Web"],
+      image: emailn8n,
+      github: "https://github.com/louals/n8n-email-classifier",
+      cat: "Automation"
     },
     {
-      title: "Euthereum App",
-      description: "Modern online store with real-time inventory, Stripe payments, and Cloudflare edge caching. Handling high-volume secure transactions.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe", "Cloudflare"],
-      image: euthereumApp,
-      github: "https://github.com/louals/Ecommerce-React-Node.js",
-      live: "#" 
+      id: "ethereum-explorer",
+      title: "Arcane / ETH",
+      description: "Real-time smart contract interaction for immutable data storage and peer-to-peer ETH transfers via non-custodial wallet auth.",
+      tags: ["Solidity", "React", "Ethers.js", "Hardhat", "Tailwind", "MetaMask"],
+      categories: ["Full Stack", "Web"],
+      image: euthereumApp, 
+      github: "https://github.com/louals/blockchain-app", 
+      live: "https://arcane-lddl.onrender.com/",
+      cat: "Web3_Node"  
     }
   ];
 

@@ -1,82 +1,122 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FiAlertTriangle, FiRefreshCw, FiHome } from "react-icons/fi";
+import { FiAlertTriangle, FiRefreshCw, FiHome, FiTerminal } from "react-icons/fi";
 
 const NotFound = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  
 
   return (
-    <div className="min-h-screen bg-[#030303] text-white font-mono flex items-center justify-center p-6 overflow-hidden">
-      {/* GLITCH BACKGROUND EFFECT */}
-      <div className="fixed inset-0 opacity-[0.05] pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150"></div>
-        <div className="h-full w-full" style={{ 
-          backgroundImage: `linear-gradient(transparent 0%, rgba(163, 230, 53, 0.2) 50%, transparent 100%)`, 
-          backgroundSize: '100% 4px' 
-        }} />
-      </div>
+    <div className="min-h-screen bg-[#030303] text-white font-mono flex items-center justify-center p-6 overflow-hidden relative">
+      
+      {/* 1. CRT SCANLINE EFFECT */}
+      <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.08]" 
+        style={{ 
+          background: "linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06))",
+          backgroundSize: "100% 4px, 3px 100%"
+        }} 
+      />
 
-      <div className="relative z-10 max-w-2xl w-full border border-red-500/30 bg-black/40 backdrop-blur-xl p-8 md:p-16 text-center">
-        {/* ERROR ICON */}
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, -5, 0]
-          }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="flex justify-center mb-8"
-        >
-          <FiAlertTriangle size={64} className="text-red-500" />
-        </motion.div>
+      {/* 2. MOVING SCAN BAR */}
+      <motion.div 
+        initial={{ y: "-100%" }}
+        animate={{ y: "100%" }}
+        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+        className="fixed inset-0 w-full h-[100px] bg-lime-400/5 z-40 pointer-events-none blur-3xl"
+      />
 
-        {/* ERROR CODES */}
-        <div className="space-y-2 mb-10">
-          <h2 className="text-red-500 text-xs tracking-[0.5em] uppercase font-black">
-            Error_Code: 0x000404
-          </h2>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">
-            Sector_Not_Found
-          </h1>
-          <p className="text-white/40 text-[10px] uppercase tracking-widest mt-4">
-            The requested memory address is invalid or has been decommissioned.
-          </p>
+      <div className="relative z-10 max-w-3xl w-full border-t-[6px] border-red-600 bg-black/40 backdrop-blur-md p-8 md:p-12 shadow-[20px_20px_0px_rgba(255,0,0,0.1)]">
+        
+        {/* HEADER STATUS */}
+        <div className="flex justify-between items-center mb-12 border-b border-white/10 pb-4">
+          <div className="flex items-center gap-2 text-red-500 animate-pulse">
+            <FiAlertTriangle />
+            <span className="text-[10px] font-black uppercase tracking-[0.3em]">Critical_Process_Failure</span>
+          </div>
+          <div className="text-[10px] text-white/20">UUID: {Math.random().toString(16).slice(2, 10).toUpperCase()}</div>
         </div>
 
-        {/* SYSTEM CONSOLE SIMULATION */}
-        <div className="bg-black border border-white/10 p-4 mb-10 text-left">
-          <div className="flex gap-2 mb-3">
-            <div className="w-2 h-2 rounded-full bg-red-500/50" />
-            <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
-            <div className="w-2 h-2 rounded-full bg-green-500/50" />
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          {/* LEFT: HUGE 404 */}
+          <div className="md:col-span-5 relative">
+            <motion.h1 
+              initial="initial"
+              animate="animate"
+              className="text-[120px] md:text-[150px] font-black leading-none tracking-tighter text-transparent"
+              style={{ WebkitTextStroke: '2px #dc2626' }}
+            >
+              404
+            </motion.h1>
+            <div className="absolute -bottom-2 left-0 bg-red-600 text-black px-2 py-1 text-[10px] font-black uppercase">
+              Sector_Not_Found
+            </div>
           </div>
-          <div className="text-[10px] text-lime-400/70 space-y-1 uppercase">
-            <p className="">{`> STACK_TRACE: Searching for route...`}</p>
-            <p className="text-red-400">{`> ERROR: Page definition at ${window.location.pathname} is NULL`}</p>
-            <p className="">{`> SUGGESTION: Initiate emergency reboot to core directory`}</p>
-            <p className="animate-pulse">{`> _`}</p>
+
+          {/* RIGHT: TEXT CONTENT */}
+          <div className="md:col-span-7 space-y-6">
+            <h2 className="text-3xl font-black uppercase leading-tight italic">
+              Access to <span className="text-red-500">{location.pathname}</span> was denied or corrupted.
+            </h2>
+            <p className="text-white/40 text-xs uppercase leading-relaxed tracking-wider">
+              The system administrator has been notified. This incident has been logged in the central kernel registry. 
+              Please relocate to a verified sector.
+            </p>
           </div>
         </div>
 
-        {/* ACTION BUTTONS */}
-        <div className="flex flex-col sm:flex-row gap-4">
+        {/* LOG TERMINAL */}
+        <div className="mt-12 bg-[#0a0a0a] border border-white/5 p-6 font-mono relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-2 text-[8px] text-white/10">CORE_LOG_V2.0</div>
+          <div className="text-[11px] space-y-2">
+            <div className="flex gap-4">
+              <span className="text-white/20">[0.00012]</span>
+              <span className="text-lime-400">Initiating system scan...</span>
+            </div>
+            <div className="flex gap-4">
+              <span className="text-white/20">[0.00045]</span>
+              <span className="text-red-500">ERROR: Directory "{location.pathname}" is unreadable.</span>
+            </div>
+            <div className="flex gap-4">
+              <span className="text-white/20">[0.00089]</span>
+              <span className="text-yellow-500">WARNING: User session floating in void space.</span>
+            </div>
+            <div className="flex gap-4">
+              <span className="text-white/20">[0.00120]</span>
+              <span className="text-blue-400">Recommendation: Execute return to BIOS.</span>
+            </div>
+            <div className="flex gap-2 text-lime-400/50 pt-2 animate-pulse">
+              <FiTerminal />
+              <span>{`awaiting_input_`}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* ACTIONS */}
+        <div className="mt-10 flex flex-wrap gap-4">
           <button 
             onClick={() => navigate("/")}
-            className="flex-1 flex items-center justify-center gap-3 py-4 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] hover:bg-lime-400 transition-all"
+            className="group relative flex-1 min-w-[200px] overflow-hidden bg-white text-black py-4 text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:bg-lime-400"
           >
-            <FiHome /> [ Return_Home ]
+            <span className="relative z-10 flex items-center justify-center gap-2">
+              <FiHome /> Return_to_Root
+            </span>
           </button>
+          
           <button 
-            onClick={() => window.location.reload()}
-            className="flex-1 flex items-center justify-center gap-3 py-4 border border-white/10 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white/10 transition-all"
+            onClick={() => navigate(-1)}
+            className="flex-1 min-w-[200px] border border-white/10 py-4 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white/5 transition-all flex items-center justify-center gap-2"
           >
-            <FiRefreshCw /> [ Retry_System ]
+            <FiRefreshCw /> [ Step_Back ]
           </button>
         </div>
+      </div>
 
-        {/* DECORATIVE FOOTER */}
-        <div className="mt-12 opacity-20 text-[8px] uppercase tracking-[1em]">
-          Terminal_Status: Offline // Access_Denied
-        </div>
+      {/* AMBIENT BACKGROUND TEXT */}
+      <div className="absolute bottom-10 right-10 opacity-5 pointer-events-none select-none">
+        <h3 className="text-[10vw] font-black leading-none uppercase">Void</h3>
       </div>
     </div>
   );

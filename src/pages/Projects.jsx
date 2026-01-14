@@ -24,12 +24,44 @@ import weathern8n from "../assets/weathern8n.png";
 import fitnessphp from "../assets/fitness-php.png";
 import species from "../assets/species.jpg";
 import shopping from "../assets/shopping.png";
+import Nocturne from "../assets/nocturn.png";
+import euthereumApp from "../assets/euthereum-app.png";
 
 const Projects = () => {
   const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      id: "nocturne",
+      title: "Nocturne",
+      description: "A modern web platform for buying and selling homes. Features include property listings, search filters, user authentication, and real-time management.",
+      tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
+      categories: ["Web"],
+      image: Nocturne,
+      github: "https://github.com/louals/stocks-app",
+      live: "https://nocturn-kappa.vercel.app/",
+      cat: "Fintech"
+    },
+    {
+      id: "email-n8n",
+      title: "Email Workflow Automation",
+      description: "Automation pipeline for email processing using N8N visual workflows.",
+      tags: ["N8N", "APIs", "Workflow"],
+      categories: ["Web"],
+      image: emailn8n,
+      github: "https://github.com/louals/EmailN8N",
+      cat: "Automation"
+    },
+    {
+      id: "euthereum-app",
+      title: "Euthereum App",
+      description: "Modern online store with real-time inventory, Stripe payments, and Cloudflare edge caching. Handling high-volume secure transactions.",
+      tags: ["React", "Node.js", "MongoDB", "Stripe", "Cloudflare"],
+      categories: ["Web3"],
+      image: euthereumApp,
+      github: "https://github.com/louals/Ecommerce-React-Node.js",
+    },
     {
       id: "social-media",
       title: "Social Media App",
@@ -40,6 +72,28 @@ const Projects = () => {
       github: "https://github.com/louals/React_SocialMedia",
       live: "https://save-and-share.onrender.com/",
       cat: "Social"
+    },
+    {
+      id: "docs-clone",
+      title: "Docs Editor Clone",
+      description: "Real-time collaborative document editor utilizing Firebase Cloud for synchronization and storage.",
+      tags: ["React", "Firebase Cloud", "Tailwind"],
+      categories: ["Full Stack", "Web"],
+      image: docs,
+      github: "https://github.com/louals/GoogleDocsClone",
+      live: "https://docs-editor-mxwx.onrender.com/dashboard",
+      cat: "Web_Productivity"
+    },
+    {
+      id: "qr-studio",
+      title: "QR Studio",
+      description: "A custom QR code generator featuring a Vue.js frontend and a Python Flask backend for processing.",
+      tags: ["Vue.js", "Python", "Flask", "Tailwind"],
+      categories: ["Full Stack", "Web"],
+      image: qr,
+      github: "https://github.com/louals/QR-Studio",
+      live: "https://qr-studio.onrender.com/",
+      cat: "Utility"
     },
     {
       id: "deal-zone",
@@ -63,6 +117,37 @@ const Projects = () => {
       cat: "Non_Profit"
     },
     {
+      id: "macbook-3d",
+      title: "Macbook 3D Experience",
+      description: "Interactive 3D product showcase using Three.js and GSAP for high-end web animations.",
+      tags: ["React", "Three.js", "GSAP", "Tailwind"],
+      categories: ["Web"],
+      image: macbook,
+      github: "https://github.com/louals/macbook_gsap_web",
+      live: "https://macbookpro-0fef.onrender.com/",
+      cat: "Web_3D"
+    },
+    {
+      id: "doctor-site",
+      title: "Medical Practice Site",
+      description: "Professional landing page for healthcare services with optimized appointment UI.",
+      tags: ["React", "Tailwind", "Lucide"],
+      categories: ["Web"],
+      image: docwebsite,
+      live: "https://dr-alsabbagh.com/#",
+      cat: "Health_Web"
+    },
+    {
+      id: "weather-n8n",
+      title: "Daily Weather Email Automation",
+      description: "Automation pipeline for daily weather email using N8N visual workflows.",
+      tags: ["N8N", "APIs", "Workflow"],
+      categories: ["Web"],
+      image: weathern8n,
+      github: "https://github.com/louals/n8n-daily-weather-email",
+      cat: "Automation"
+    },
+    {
       id: "ibongsport",
       title: "Ibongsport Website",
       description: "A comprehensive sports portal developed using the MERN stack for high-traffic content management.",
@@ -71,28 +156,6 @@ const Projects = () => {
       image: ibongsport,
       live: "https://ibongsport.ca/",
       cat: "MERN_Stack"
-    },
-    {
-      id: "docs-clone",
-      title: "Docs Editor Clone",
-      description: "Real-time collaborative document editor utilizing Firebase Cloud for synchronization and storage.",
-      tags: ["React", "Firebase Cloud", "Tailwind"],
-      categories: ["Full Stack", "Web"],
-      image: docs,
-      github: "https://github.com/louals/GoogleDocsClone",
-      live: "https://docs-editor-mxwx.onrender.com/dashboard",
-      cat: "Web_Productivity"
-    },
-    {
-      id: "qr-studio",
-      title: "QR Studio",
-      description: "A custom QR code generator featuring a Vue.js frontend and a Python Flask backend for processing.",
-      tags: ["Vue.js", "Python", "Flask", "Tailwind"],
-      categories: ["Full Stack", "Web"],
-      image: qr,
-      github: "https://github.com/louals/QR-Studio",
-      live: "https://qr-studio.onrender.com/",
-      cat: "Utility"
     },
     {
       id: "fitness-php",
@@ -125,17 +188,6 @@ const Projects = () => {
       cat: "Mobile_Native"
     },
     {
-      id: "macbook-3d",
-      title: "Macbook 3D Experience",
-      description: "Interactive 3D product showcase using Three.js and GSAP for high-end web animations.",
-      tags: ["React", "Three.js", "GSAP", "Tailwind"],
-      categories: ["Web"],
-      image: macbook,
-      github: "https://github.com/louals/macbook_gsap_web",
-      live: "https://macbookpro-0fef.onrender.com/",
-      cat: "Web_3D"
-    },
-    {
       id: "ml-platform",
       title: "ML Training Platform",
       description: "Automated ML platform that evaluates multiple models for classification using Scikit-learn.",
@@ -165,36 +217,6 @@ const Projects = () => {
       image: cbir,
       github: "https://github.com/louals/CBIR-System", 
       cat: "Computer_Vision"
-    },
-    {
-      id: "doctor-site",
-      title: "Medical Practice Site",
-      description: "Professional landing page for healthcare services with optimized appointment UI.",
-      tags: ["React", "Tailwind", "Lucide"],
-      categories: ["Web"],
-      image: docwebsite,
-      live: "https://dr-alsabbagh.com/#",
-      cat: "Health_Web"
-    },
-    {
-      id: "email-n8n",
-      title: "Workflow Automation",
-      description: "Automation pipeline for email processing using N8N visual workflows.",
-      tags: ["N8N", "APIs", "Workflow"],
-      categories: ["Web"],
-      image: emailn8n,
-      github: "https://github.com/louals/EmailN8N",
-      cat: "Automation"
-    },,
-    {
-      id: "weather-n8n",
-      title: "Workflow Automation",
-      description: "Automation pipeline for email processing using N8N visual workflows.",
-      tags: ["N8N", "APIs", "Workflow"],
-      categories: ["Web"],
-      image: weathern8n,
-      github: "https://github.com/louals/n8n-daily-weather-email",
-      cat: "Automation"
     }
   ];
 
@@ -204,7 +226,8 @@ const Projects = () => {
     { id: "AI/ML", icon: <FiCpu size={14} /> },
     { id: "Full Stack", icon: <FiDatabase size={14} /> },
     { id: "Mobile", icon: <FiSmartphone size={14} /> },
-    { id: "IoT", icon: <FiCpu size={14} /> }
+    { id: "IoT", icon: <FiCpu size={14} /> },
+    { id: "Web3", icon: <FiCpu size={14} /> }
   ];
 
   const filteredProjects = activeCategory === "All"
