@@ -54,7 +54,7 @@ export default function AnimatedIntro() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <span>Initializing...</span>
+              
               <motion.span
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 0.5, repeat: Infinity }}

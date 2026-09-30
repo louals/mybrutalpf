@@ -38,9 +38,9 @@ const ProjectDetails = () => {
         <div className="flex justify-between items-center mb-16 border-b border-white/10 pb-8">
           <button 
             onClick={() => navigate(-1)} 
-            className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-white/40 hover:text-lime-400 transition-all"
+            className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-white hover:text-lime-400 transition-all"
           >
-            <FiArrowLeft className="group-hover:-translate-x-1 transition-transform" /> [ Back_To_Registry ]
+            <FiArrowLeft className="group-hover:-translate-x-1 transition-transform" /> Back
           </button>
           <div className="text-[9px] text-white/20 uppercase tracking-widest hidden md:block">
             Object_ID: {project.id} // Sector: {project.cat}
@@ -126,7 +126,7 @@ const ProjectDetails = () => {
                   href={project.live} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-3 py-5 bg-lime-400 text-black text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white transition-all shadow-[0_0_20px_rgba(163,230,53,0.2)]"
+                  className="flex-1 flex items-center justify-center gap-3 py-5 bg-lime-400 text-black text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white transition-all shadow-lg shadow-lime-400/20"
                 >
                   <FiExternalLink /> Live_Execute
                 </a>

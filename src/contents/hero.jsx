@@ -4,7 +4,9 @@ export const heroContent = {
       title: "Hi, I'm",
       name: "Louai",
       roles: [
-        "Full Stack Developer",
+        "Software Developer",
+        "Frontend Developer",
+        "UI/UX Designer"
       ],
       description: "I build digital experiences with modern web technologies. Currently specializing in React, Node.js, and Python applications.",
       buttons: {

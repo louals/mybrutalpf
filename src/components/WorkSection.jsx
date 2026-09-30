@@ -55,9 +55,7 @@ const WorkSection = () => {
             <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-4">
               Selected <span className="text-transparent" style={{ WebkitTextStroke: '1px white' }}>Works</span>
             </h2>
-            <p className="font-mono text-gray-500 uppercase tracking-widest text-sm">
-              // Archive_v2.06 — Selected_Deployments
-            </p>
+           
           </div>
           <div className="hidden md:block text-right">
             <span className="text-lime-400 font-mono text-xs">03_TOTAL_SYSTEMS</span>
@@ -77,7 +75,7 @@ const WorkSection = () => {
               {/* PROJECT IMAGE */}
               <div className="lg:col-span-7 relative overflow-hidden bg-zinc-900 aspect-video border-b lg:border-b-0 lg:border-r border-white/10">
                 <div className="absolute top-4 left-4 z-20 bg-black/80 backdrop-blur px-3 py-1 border border-white/10 font-mono text-[10px] uppercase text-lime-400">
-                  SYS_ID: 0{index + 1}
+                  Project : 0{index + 1}
                 </div>
                 <img 
                   src={project.image} 
@@ -89,7 +87,7 @@ const WorkSection = () => {
               {/* PROJECT INFO */}
               <div className="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center bg-[#080808] group-hover:bg-[#0c0c0c] transition-colors">
                 <div className="flex items-center gap-3 text-lime-400 mb-6 font-mono text-xs">
-                  <FiLayers /> <span>COMPILED_RESOURCES</span>
+                  <FiLayers /> <span>PROJECT NAME</span>
                 </div>
                 
                 <h3 className="text-4xl font-black uppercase tracking-tighter mb-4 group-hover:text-lime-400 transition-colors">
@@ -115,7 +113,7 @@ const WorkSection = () => {
                     rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-3 py-4 border border-white/20 hover:bg-white hover:text-black transition-all font-black uppercase text-xs"
                   >
-                    <FiGithub /> Source_Code
+                    <FiGithub /> Source Code
                   </a>
                   <a
                     href={project.live}
@@ -123,7 +121,7 @@ const WorkSection = () => {
                     rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-3 py-4 bg-lime-400 text-black hover:bg-white transition-all font-black uppercase text-xs"
                   >
-                    <FiExternalLink /> Live_Preview
+                    <FiExternalLink /> Live Preview
                   </a>
                 </div>
               </div>
@@ -136,10 +134,10 @@ const WorkSection = () => {
             <h3 className="text-xl font-mono text-white/40 mb-8 uppercase tracking-[0.3em]">Explore the full directory?</h3>
             <a
                 href="/projects"
-                className="group inline-flex items-center gap-6 text-4xl md:text-6xl font-black uppercase hover:text-lime-400 transition-all"
+                className="group inline-flex items-center gap-6 text-4xl md:text-6xl font-black uppercase hover:text-lime-400 transition-all underline"
             >
-                View_All_Projects
-                <FiTerminal className="group-hover:translate-x-4 transition-transform text-lime-400" />
+                <FiExternalLink /> View All Projects
+                
             </a>
         </div>
       </div>

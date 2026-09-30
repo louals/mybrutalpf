@@ -101,7 +101,7 @@ const NotFound = () => {
             className="group relative flex-1 min-w-[200px] overflow-hidden bg-white text-black py-4 text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:bg-lime-400"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
-              <FiHome /> Return_to_Root
+              <FiHome /> Return
             </span>
           </button>
           

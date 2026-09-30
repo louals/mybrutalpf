@@ -8,26 +8,10 @@
   }
 }
 
-/* Pointer (clickable) cursor */
-.cursor-pointer,
-a,
-button,
-[role="button"],
-input:is([type="submit"], [type="button"]) {
-  cursor: url('/pointer-lime.svg'), pointer;
-}
-
-body {
-  cursor: url('/cursor-lime.svg'), auto;
-  background-color: #000;
-}
 
 
-p, span, h1, h2, h3, input, textarea, code,label, pre {
-  cursor: text !important;
-}
 
 ::selection {
-  background-color: #a3e537;
+  background-color: theme('colors.lime.400');
   color: #000000;
 }

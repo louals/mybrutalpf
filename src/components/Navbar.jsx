@@ -90,7 +90,7 @@ const BrutalNavbar = () => {
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-lime-400 border border-black animate-pulse" />
           </div>
           <span className="font-black text-xl tracking-tighter uppercase hidden sm:block">
-            ARCH<span className="text-lime-400">.</span>
+            
           </span>
         </div>
 

@@ -46,10 +46,7 @@ const ContactSection = () => {
         
         {/* Header - Industrial Style */}
         <div className="mb-20">
-          <div className="flex items-center gap-3 text-lime-400 font-mono text-xs mb-4">
-            <FiTerminal />
-            <span className="tracking-[0.3em]">ESTABLISH_CONNECTION</span>
-          </div>
+          
           <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white">
             Get In <span className="text-transparent stroke-text" style={{ WebkitTextStroke: '1px white' }}>Touch</span>
           </h2>
@@ -63,7 +60,7 @@ const ContactSection = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="relative group">
                   <label className="block font-mono text-[10px] text-white/40 uppercase mb-2 group-focus-within:text-lime-400 transition-colors">
-                    01_Client_Name
+                    Client Name
                   </label>
                   <input
                     type="text"
@@ -76,7 +73,7 @@ const ContactSection = () => {
                 </div>
                 <div className="relative group">
                   <label className="block font-mono text-[10px] text-white/40 uppercase mb-2 group-focus-within:text-lime-400 transition-colors">
-                    02_Email_Address
+                    Email Address
                   </label>
                   <input
                     type="email"
@@ -91,7 +88,7 @@ const ContactSection = () => {
 
               <div className="relative group">
                 <label className="block font-mono text-[10px] text-white/40 uppercase mb-2 group-focus-within:text-lime-400 transition-colors">
-                  03_Message_Packet
+                  Message Packet
                 </label>
                 <textarea
                   name="message"
@@ -108,7 +105,7 @@ const ContactSection = () => {
                 disabled={isSending}
                 className="group relative flex items-center gap-4 bg-lime-400 text-black px-10 py-5 font-black uppercase text-sm hover:bg-white transition-all disabled:opacity-50"
               >
-                {isSending ? "Transmitting..." : "Send_Message"}
+                {isSending ? "Transmitting..." : "Send Message"}
                 <FiSend className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </form>
@@ -118,19 +115,19 @@ const ContactSection = () => {
           <div className="lg:col-span-5 bg-[#0c0c0c] p-8 md:p-12 flex flex-col justify-between">
             <div className="space-y-12">
               <div>
-                <h4 className="font-mono text-[10px] text-white/40 uppercase tracking-[0.2em] mb-6">Contact_Methods</h4>
+                <h4 className="font-mono text-[10px] text-white/40 uppercase tracking-[0.2em] mb-6">Contact Methods</h4>
                 <div className="space-y-6">
                   <a href="mailto:me@louaialsabbagh.tech" className="flex items-center gap-4 group">
                     <div className="w-12 h-12 border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                       <FiMail size={20} />
                     </div>
-                    <span className="font-mono text-sm group-hover:text-lime-400 transition-colors">me@louaialsabbagh.tech</span>
+                    <span className="font-mono text-sm group-hover:text-lime-400 transition-colors">louai.alsabbagh@esst-sup.com</span>
                   </a>
                   <div className="flex items-center gap-4 group">
                     <div className="w-12 h-12 border border-white/10 flex items-center justify-center">
                       <FiMapPin size={20} />
                     </div>
-                    <span className="font-mono text-sm text-white/60 uppercase tracking-widest">Montreal, QC // Remote</span>
+                    <span className="font-mono text-sm text-white/60 uppercase tracking-widest">Algiers, Algeria</span>
                   </div>
                 </div>
               </div>
@@ -153,7 +150,7 @@ const ContactSection = () => {
             {/* Bottom Status bar */}
             <div className="mt-12 pt-8 border-t border-white/5 font-mono text-[10px] text-white/20 flex justify-between uppercase">
               <span>Status: Available</span>
-              <span>Local_Time: {new Date().toLocaleTimeString()}</span>
+              <span>Local Time: {new Date().toLocaleTimeString()}</span>
             </div>
           </div>
         </div>

@@ -246,24 +246,19 @@ const Projects = () => {
         <div className="flex justify-between items-center mb-16 border-b border-white/10 pb-8">
           <button
             onClick={() => navigate("/")}
-            className="group flex items-center gap-2 text-xs tracking-[0.3em] uppercase text-white/40 hover:text-lime-400 transition-all"
+            className="group flex items-center gap-2 text-xs tracking-[0.3em] uppercase text-white hover:text-lime-400 transition-all"
           >
             <FiArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> 
-            [ Return_to_Main_Frame ]
+            Return
           </button>
-          <div className="hidden md:block text-[10px] text-lime-400/50 uppercase tracking-widest">
-            System_Status: Full_Registry_Access // v2.06
-          </div>
+          
         </div>
 
         {/* BRUTALIST HEADER */}
         <div className="mb-20 space-y-4">
-          <div className="flex items-center gap-3 text-lime-400 text-xs tracking-widest uppercase">
-            <FiTerminal className="animate-pulse" /> CORE_01_RESOURCES
-          </div>
+          
           <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.8]">
-            Project <br />
-            <span className="text-transparent" style={{ WebkitTextStroke: '1px white' }}>Archive_</span>
+            Projects <br />
           </h1>
         </div>
 
@@ -309,12 +304,12 @@ const Projects = () => {
                     onClick={() => navigate(`/projects/${project.id}`, { state: { project } })}
                     className="bg-lime-400 text-black px-6 py-3 text-[10px] font-black uppercase tracking-[0.2em] transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 hover:bg-white"
                   >
-                    [ View_Full_Specs ]
+                    [ View ]
                   </button>
                 </div>
 
                 <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md border border-white/10 px-2 py-1 text-[8px] uppercase tracking-tighter text-white/60">
-                  SYS_NODE: {project.cat}
+                  Category: {project.cat}
                 </div>
               </div>
 

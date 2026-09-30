@@ -73,11 +73,11 @@ const SkillsMatrix = () => {
   const [filter, setFilter] = useState("languages");
 
   const categories = [
-    { id: "languages", label: "01_LANGUAGES", icon: <FiCode /> },
-    { id: "frontend", label: "02_FRONT_END", icon: <FiLayers /> },
-    { id: "backend", label: "03_BACK_END", icon: <FiDatabase /> },
-    { id: "data", label: "04_DATA_AI", icon: <FiAi /> },
-    { id: "tools", label: "05_DEVOPS", icon: <FiSettings /> },
+    { id: "languages", label: "LANGUAGES", icon: <FiCode /> },
+    { id: "frontend", label: "FRONT END", icon: <FiLayers /> },
+    { id: "backend", label: "BACK END", icon: <FiDatabase /> },
+    { id: "data", label: "DATA AI", icon: <FiAi /> },
+    { id: "tools", label: "DEVOPS", icon: <FiSettings /> },
   ];
 
   const filteredStack = techStack.filter(
@@ -94,10 +94,7 @@ const SkillsMatrix = () => {
         {/* HEADER SECTION */}
         <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 items-end gap-10">
           <div>
-            <div className="flex items-center gap-2 text-lime-400 text-xs mb-4">
-              <FiActivity className="animate-pulse" />
-              <span>DIAGNOSTIC_SKILLS_REPORT_V2.0</span>
-            </div>
+            
             <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white">
               Tech <span className="text-transparent" style={{ WebkitTextStroke: '1px white' }}>Stack</span>
             </h2>
